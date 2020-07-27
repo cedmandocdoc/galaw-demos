@@ -1,0 +1,24 @@
+{
+  "name": "galaw-show-off",
+  "version": "0.0.0",
+  "description": "Galaw animation library pre show off",
+  "main": "index.js",
+  "repository": "git@github.com:cedmandocdoc/galaw-show-off.git",
+  "author": "Cedrick Mandocdoc <cedrickmandocdoc@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "lint": "eslint 'src/**/*.js'",
+    "format": "prettier --write 'src/**/*.js'",
+    "predeploy": "parcel build ./src/index.html",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "agos": "^0.5.0-alpha.2",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "gh-pages": "^3.1.0",
+    "prettier": "^2.0.5"
+  }
+}
