@@ -10,6 +10,8 @@
   "scripts": {
     "lint": "eslint 'src/**/*.js'",
     "format": "prettier --write 'src/**/*.js'",
+    "dev": "parcel ./src/index.html",
+    "build": "rm -rf dist && parcel build ./src/index.html --public-url /galaw-show-off",
     "predeploy": "parcel build ./src/index.html",
     "deploy": "gh-pages -d dist"
   },
