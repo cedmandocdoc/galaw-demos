@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galaw animation library pre show off</title>
+  <title>Galaw JS pre show off</title>
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./demos/demo-1.css">
+  <link rel="stylesheet" href="./demos/demo-2.css">
 </head>
+
 <body>
-  
-  <script src="./index.js"></script>
+  <header>
+    <h2>Galaw animation library demos</h2>
+    <p>Galaw is a functional, scalable JavaScript animaiton library. It is not ready yet, but this demos will help to
+      clear some goals of its roadmap. View it on <a href="https://github.com/cedmandocdoc/galaw">Github</a>. <i>Not yet
+        mobile responsive!</i></p>
+  </header>
+  <main>
+    <article id="demo-1" class="demo">
+      <h3>Spring simulator</h3>
+      <span>Touch the circle and drag. Edit the spring configuration (WIP)</span>
+      <section class="playground">
+        <div class="big-ball pink"><span>Drag me!</span></div>
+        <form class="spring-setting">
+          <div class="field">
+            <label for="demo-1-mass">Mass: <span>100</span></label>
+            <input type="range" min="10" max="500" name="mass" value="100" id="demo-1-mass">
+          </div>
+          <div class="field">
+            <label for="demo-1-stiffness">Stiffness: <span>50</span></label>
+            <input type="range" min="10" max="5000" name="damping" value="3000" id="demo-1-stiffness">
+          </div>
+          <div class="field">
+            <label for="demo-1-damping">Damping: <span>100</span></label>
+            <input type="range" min="10" max="5000" name="damping" value="100" id="demo-1-damping">
+          </div>
+        </form>
+      </section>
+    </article>
+
+    <article id="demo-2" class="demo">
+      <h3>3D Card</h3>
+      <span>Hover the container from all sides and edges.</span>
+      <section class="playground">
+        <div class="big-square green"><span>I am a big card! Hover here!</span></div>
+      </section>
+    </article>
+
+    <article class="demo">
+      <h3>Slider Decay</h3>
+      <span>Slide it over and watch the slides to smoothly decay is position. Coming soon!</span>
+      <section class="playground"></section>
+    </article>
+  </main>
+  <footer>
+    <p>
+      <span>&#169; 2020</span>
+      <span><a href="https://github.com/cedmandocdoc/galaw-show-off">Github</a></span>
+      <span><a href="https://twitter.com/cedmandocdoc">Twitter</a></span>
+    </p>
+  </footer>
+
+  <script src="./demos/demo-1.js"></script>
+  <script src="./demos/demo-2.js"></script>
 </body>
+
 </html>

@@ -38,10 +38,10 @@ acorn@^7.3.1:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.3.1.tgz#85010754db53c3fbaf3b9ea3e083aa5c5d147ffd"
   integrity sha512-tLc0wSnatxAQHVHUapaHdz72pi9KUyHjq5KyHjGg9Y8Ifdc79pTh2XvI6I1/chZbnM7QtNKzh66ooDogPZSleA==
 
-agos@^0.5.0-alpha.2:
-  version "0.5.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/agos/-/agos-0.5.0-alpha.2.tgz#e96edda897630d57a7b9a4ad69982171ef829b15"
-  integrity sha512-iubivYBoi15LqK3ud2Zja2xhyG+t6ERMLzYc8lwzY+Fj6hl4nBTCqp+weazt95BG5yOGruxtMJmDeT68EQXDTg==
+agos@^0.5.0-alpha.3:
+  version "0.5.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/agos/-/agos-0.5.0-alpha.3.tgz#7e28900ed1ab29999a4b305227cd5c5028df2293"
+  integrity sha512-E64R6oSBHkA0iGctRegRbfwlnu4UG6ppwuW6/IfpBEo2iS2j181W3BlmGQx6QavnNOaCJ1kRCpryzwwPwPShoA==
 
 ajv@^6.10.0, ajv@^6.10.2:
   version "6.12.3"
