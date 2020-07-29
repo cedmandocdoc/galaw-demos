@@ -23,13 +23,13 @@ const bouncy = (displacement = 100) =>
 
 
 const center = { x: playground.clientWidth / 2, y: playground.clientHeight / 2 };
+const { top, left } = playground.getBoundingClientRect();
 const lastCenterRatio = { x: 0, y: 0 };
 
 pipe(
   fromMouseMove(playground),
-  map(e => ({ x: e.layerX - center.x, y: e.layerY - center.y })),
+  map(e => ({ x: e.clientX - left - center.x, y: e.clientY - top - center.y })),
   switchMap(({ x, y }) => {
-    const centerRatio = { x: (x / center.x), y: (y / center.y) };
 
     const lastCenterRatioX = lastCenterRatio.x;
     const lastCenterRatioY = lastCenterRatio.y;
@@ -37,8 +37,8 @@ pipe(
       pipe(
         bouncy(),
         collectLatest([
-          tween(p => p(lastCenterRatioX, centerRatio.x)),
-          tween(p => p(lastCenterRatioY, centerRatio.y)),
+          tween(p => p(lastCenterRatioX, x)),
+          tween(p => p(lastCenterRatioY, y)),
         ]),
         tap(([xr, yr]) => {
           lastCenterRatio.x = xr;
@@ -47,6 +47,7 @@ pipe(
       )
     );
   }),
+  map(([xr, yr]) => [(xr / center.x), (yr / center.y)]),
   map(([xr, yr]) => ({ transform: `perspective(600px) translate(${xr * 20}px, ${yr * 20}px)  rotateX(${-(yr * 20)}deg) rotateY(${xr * 20}deg) scale(${(.4 * Math.abs(xr)) + 1})` })),
   listen(
     noop,

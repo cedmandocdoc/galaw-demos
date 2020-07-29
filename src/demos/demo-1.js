@@ -11,7 +11,7 @@ const ball = playground.getElementsByClassName('big-ball')[0];
 const bouncy = (displacement = 100) =>
   pipe(
     spring({
-      mass: 100,
+      mass: 50,
       stiffness: 3000,
       damping: 350,
       initialDisplacement: displacement,
