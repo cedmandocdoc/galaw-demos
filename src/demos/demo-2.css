@@ -11,10 +11,11 @@
   padding: 15px;
 
   color: white;
-  font-size: 23px;
+  font-size: 25px;
   font-weight: bold;
   box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.5s;
+  text-align: center;
 }
 
 #demo-2:hover .big-square {

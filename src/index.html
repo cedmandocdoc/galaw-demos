@@ -20,38 +20,60 @@
   <main>
     <article id="demo-1" class="demo">
       <h3>Spring simulator</h3>
-      <span>Touch the circle and drag. Edit the spring configuration (WIP)</span>
-      <section class="playground">
-        <div class="big-ball pink"><span>Drag me!</span></div>
-        <form class="spring-setting">
+      <span>Touch the circle and drag. Edit the spring configuration.</span>
+      <section class="page">
+        <section class="playground">
+          <div class="big-ball pink"><span>Drag me!</span></div>
+        </section>
+        <form class="control spring-setting">
+          <span>Spring configuration:</span>
           <div class="field">
-            <label for="demo-1-mass">Mass: <span>100</span></label>
-            <input type="range" min="10" max="500" name="mass" value="100" id="demo-1-mass">
+            <label for="demo-1-mass">Mass: <span>50</span></label>
+            <input type="range" min="10" max="500" name="mass" value="50" id="demo-1-mass">
           </div>
           <div class="field">
-            <label for="demo-1-stiffness">Stiffness: <span>50</span></label>
-            <input type="range" min="10" max="5000" name="damping" value="3000" id="demo-1-stiffness">
+            <label for="demo-1-stiffness">Stiffness: <span>3000</span></label>
+            <input type="range" min="100" max="5000" name="stiffness" value="3000" id="demo-1-stiffness">
           </div>
           <div class="field">
-            <label for="demo-1-damping">Damping: <span>100</span></label>
-            <input type="range" min="10" max="5000" name="damping" value="100" id="demo-1-damping">
+            <label for="demo-1-damping">Damping: <span>350</span></label>
+            <input type="range" min="10" max="500" name="damping" value="350" id="demo-1-damping">
           </div>
         </form>
       </section>
     </article>
 
     <article id="demo-2" class="demo">
-      <h3>3D Card</h3>
+      <h3>3D Spring Card</h3>
       <span>Hover the container from all sides and edges.</span>
-      <section class="playground">
-        <div class="big-square green"><span>I am a big card! Hover here!</span></div>
+      <section class="page">
+        <section class="playground">
+          <div class="big-square green"><span>Hover Here!!!</span></div>
+        </section>
+        <form class="control spring-setting">
+          <span>Spring configuration:</span>
+          <div class="field">
+            <label for="demo-1-mass">Mass: <span>50</span></label>
+            <input type="range" min="30" max="500" name="mass" value="50" id="demo-1-mass">
+          </div>
+          <div class="field">
+            <label for="demo-1-stiffness">Stiffness: <span>3000</span></label>
+            <input type="range" min="2000" max="5000" name="stiffness" value="3000" id="demo-1-stiffness">
+          </div>
+          <div class="field">
+            <label for="demo-1-damping">Damping: <span>350</span></label>
+            <input type="range" min="10" max="500" name="damping" value="350" id="demo-1-damping">
+          </div>
+        </form>
       </section>
     </article>
 
     <article class="demo">
       <h3>Slider Decay</h3>
       <span>Slide it over and watch the slides to smoothly decay is position. Coming soon!</span>
-      <section class="playground"></section>
+      <section class="page">
+        <section class="playground"></section>
+      </section>
     </article>
   </main>
   <footer>

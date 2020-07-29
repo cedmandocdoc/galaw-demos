@@ -62,20 +62,28 @@ main article {
   }
 }
 
-.demo .playground {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  /* padding-top: 75%; */
+.demo .page {
   margin-top: 20px;
   border-radius: 8px;
   background-color: #f2f2f2;
   overflow: hidden;
+  font-size: 12px;
+}
+
+.demo .page .playground {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.demo .page .control {
+  padding: 20px;
+  background-color: aliceblue;
 }
 
 @media (min-width: 1200px) {
-  .demo .playground {
-    /* padding-top: 65%; */
+  .demo .page .playground {
     height: 500px;
   }
 }
@@ -116,18 +124,17 @@ footer {
 
 /* Spring setting */
 .spring-setting {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  font-size: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
 .spring-setting .field {
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 .spring-setting .field label {
-  width: 90px;
   display: inline-block;
+  width: 90px;
 }

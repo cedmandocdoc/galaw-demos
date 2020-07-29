@@ -1,12 +1,15 @@
-import { listen, never, tap, map, pipe, switchMap, of } from "agos";
+import { never, tap, map, pipe, switchMap, of } from "agos";
 import fromDrag from '../galaw/fromDrag';
 import spring from "../galaw/spring";
 import autoplay from "../galaw/autoplay";
-import { noop } from "../galaw/utils";
+import { subscribe } from "../galaw/utils";
+import { createSpringSettings } from "./utils";
 
 const container = document.getElementById('demo-1');
 const playground = container.getElementsByClassName('playground')[0]
 const ball = playground.getElementsByClassName('big-ball')[0];
+
+const getSettings = createSpringSettings(container);
 
 const bouncy = (displacement = 100) =>
   pipe(
@@ -15,7 +18,9 @@ const bouncy = (displacement = 100) =>
       stiffness: 3000,
       damping: 350,
       initialDisplacement: displacement,
-      initialVelocity: 0
+      initialVelocity: 0,
+      // override settings
+      ...getSettings()
     }),
     map(data => Math.abs(data.displacement - displacement) / displacement)
   );
@@ -73,10 +78,5 @@ pipe(
     return of({ x: last.x + e.x, y: last.y + e.y });
   }),
   map(coor => ({ transform: `translate(${coor.x}px, ${coor.y}px)` })),
-  listen(
-    noop,
-    style => Object.assign(ball.style, style),
-    noop,
-    noop
-  )
+  subscribe(style => Object.assign(ball.style, style))
 );
