@@ -1,6 +1,6 @@
 {
   "name": "galaw-show-off",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Galaw animation library pre show off",
   "main": "index.js",
   "repository": "git@github.com:cedmandocdoc/galaw-show-off.git",
