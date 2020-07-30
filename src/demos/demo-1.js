@@ -1,4 +1,4 @@
-import { never, tap, map, pipe, switchMap, of } from "agos";
+import { never, tap, map, pipe, switchMap, of, merge } from "agos";
 import fromDrag from '../galaw/fromDrag';
 import spring from "../galaw/spring";
 import autoplay from "../galaw/autoplay";
@@ -57,7 +57,7 @@ let last = { x: 0, y: 0 };
 pipe(
   fromDrag(ball),
   switchMap(([name, e]) => {
-    if (name === "hold") return never();
+    if (name === "hold") return merge([of('grabbing'), never()])
 
     if (name === "release") {
       const hypotenuse = getHypotenuse(dest, {
@@ -65,18 +65,21 @@ pipe(
         y: last.y + e.y
       });
       const angle = getTangentAngle(dest, { x: last.x + e.x, y: last.y + e.y });
-      return autoplay(
+      return merge([of('grab'), autoplay(
         pipe(
           bouncy(),
           map(progress => (1 - progress) * hypotenuse),
           map(hypotenuse => getAdjAndOppSide(angle, hypotenuse)),
           tap(coor => (last = coor))
         )
-      );
+      )]);
     }
 
-    return of({ x: last.x + e.x, y: last.y + e.y });
+    return merge([of('grabbing'), of({ x: last.x + e.x, y: last.y + e.y })])
   }),
-  map(coor => ({ transform: `translate(${coor.x}px, ${coor.y}px)` })),
-  subscribe(style => Object.assign(ball.style, style))
+  subscribe(([key, index]) => {
+    if (index === 0) return ball.style.cursor = key;
+    const { x, y } = key;
+    return Object.assign(ball.style, { transform: `translate(${x}px, ${y}px)` })
+  })
 );

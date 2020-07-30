@@ -52,7 +52,6 @@ pipe(
     );
   }),
   map(([xr, yr]) => [(xr / center.x), (yr / center.y)]),
-  tap(console.log),
   map(([xr, yr]) => ({ transform: `perspective(600px) translate(${xr * 25}px, ${yr * 25}px)  rotateX(${-(yr * 25)}deg) rotateY(${xr * 25}deg) scale(${(.5 * Math.abs(xr)) + 1})` })),
   listen(
     noop,
