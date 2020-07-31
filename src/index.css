@@ -34,7 +34,7 @@ main {
   margin: 50px 0px;
 }
 
-main article {
+main .demo {
   grid-column: 1 / span 12;
 }
 

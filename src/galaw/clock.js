@@ -61,7 +61,6 @@ const clock = create((open, next, fail, done, talkback) => {
   };
 
   open();
-  play();
 
   talkback.listen(
     noop,

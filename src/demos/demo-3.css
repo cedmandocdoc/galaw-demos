@@ -1,0 +1,6 @@
+#demo-3 .big-square {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  margin-top: -50px;
+}

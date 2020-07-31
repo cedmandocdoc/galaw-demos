@@ -22,7 +22,8 @@ const repeat = (clip, loop) => create((open, next, fail, done, talkback) => {
     if (count >= loop) return;
     if (time >= 0 && time <= duration) {
       const current = time - lapse * count;
-      control.next({ time: current, forward, progress: current / lapse });
+
+      control.next({ time: current, forward, progress: current / lapse, alternate: count % 2 === 0 ? current / lapse : 1 - (current / lapse) });
     }
   };
 

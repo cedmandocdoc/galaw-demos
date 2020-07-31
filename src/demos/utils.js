@@ -1,6 +1,7 @@
-import { map, pipe, } from "agos";
+import { map, pipe, listen } from "agos";
 import fromEvent from "../galaw/fromEvent";
-import { subscribe } from "../galaw/utils";
+
+const noop = () => { };
 
 export const createSpringSettings = container => {
   const fields = container.getElementsByClassName('spring-setting')[0].getElementsByClassName('field');
@@ -22,3 +23,13 @@ export const createSpringSettings = container => {
 
   return () => settings;
 };
+
+
+// agos specific
+
+export const subscribe = (sink, external) => {
+  if (typeof sink === "function") return listen(noop, sink, noop, noop, external);
+  return listen(sink.open, sink.next, sink.fail, sink.done, external);
+}
+
+export const mapTo = value => map(() => value);

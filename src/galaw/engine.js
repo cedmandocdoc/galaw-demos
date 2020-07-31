@@ -1,6 +1,6 @@
 class Engine {
   constructor() {
-    this.queue = 0;
+    this.queue = 1;
     this.running = false;
     this.tasks = new Map();
   }

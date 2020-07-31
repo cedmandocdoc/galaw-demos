@@ -1,8 +1,4 @@
-import { listen } from "agos";
-
 export const noop = () => { };
-
-export const prop = key => object => object[key];
 
 export const clipTime = (start, end, next) => {
   const status = [0, 0];
@@ -30,8 +26,3 @@ export const clipTime = (start, end, next) => {
 
 export const CLOCK_MODE = Symbol("CLOCK_MODE");
 export const EMITTER_MODE = Symbol("EMITTER_MODE");
-
-export const subscribe = (sink, external) => {
-  if (typeof sink === "function") return listen(noop, sink, noop, noop, external);
-  return listen(sink.open, sink.next, sink.fail, sink.done, external);
-}

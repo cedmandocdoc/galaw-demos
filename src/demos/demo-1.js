@@ -1,9 +1,7 @@
 import { never, tap, map, pipe, switchMap, of, merge } from "agos";
-import fromDrag from '../galaw/fromDrag';
-import spring from "../galaw/spring";
-import autoplay from "../galaw/autoplay";
-import { subscribe } from "../galaw/utils";
-import { createSpringSettings } from "./utils";
+import { fromDrag, spring, autoplay } from '../galaw';
+
+import { createSpringSettings, subscribe } from "./utils";
 
 const container = document.getElementById('demo-1');
 const playground = container.getElementsByClassName('playground')[0]

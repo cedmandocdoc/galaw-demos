@@ -1,12 +1,9 @@
-import { listen, map, pipe, switchMap, collectLatest, tap, filter } from "agos";
-import tween from "../galaw/tween";
-import spring from "../galaw/spring";
-import autoplay from "../galaw/autoplay";
-import fromMouseMove from "../galaw/fromMouseMove";
-import { noop, subscribe } from "../galaw/utils";
-import { createSpringSettings } from "./utils";
-import fromEvent from "../galaw/fromEvent";
-import throttleRAF from "../galaw/throttleRAF";
+import { map, pipe, switchMap, collectLatest } from "agos";
+
+import { fromEvent, fromMouseMove, spring, autoplay, tween, throttleRAF } from '../galaw';
+
+import { createSpringSettings, subscribe } from "./utils";
+
 
 const container = document.getElementById('demo-2');
 const playground = container.getElementsByClassName('playground')[0]
@@ -71,7 +68,6 @@ const draw = ([x, y]) => {
 
 pipe(
   fromMouseMove(playground),
-  tap(() => console.log('move')),
   map(e => ({ x: e.clientX - left - center.x, y: e.clientY - top - center.y })),
   switchMap(({ x, y }) => bounce({ ...lastCenterRatio }, { x, y })),
   subscribe(draw)
