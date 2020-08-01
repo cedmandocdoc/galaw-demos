@@ -1,1 +1,0 @@
-{"version":3,"sources":["demo-3.css"],"names":[],"mappings":"AAAA,oBACE,iBAAkB,CAClB,OAAQ,CACR,QAAS,CACT,gBACF","file":"demo-3.34f81158.css","sourceRoot":"../src","sourcesContent":["#demo-3 .big-square {\n  position: absolute;\n  top: 50%;\n  left: 10%;\n  margin-top: -50px;\n}\n"]}
