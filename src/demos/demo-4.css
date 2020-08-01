@@ -1,0 +1,14 @@
+#demo-4 .playground {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#demo-4 .rect {
+  display: block;
+  width: 5px;
+  height: 100px;
+  background-color: #f9f9f9;
+  border: 1px solid #5d5d5d;
+}

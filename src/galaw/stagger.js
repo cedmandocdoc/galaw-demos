@@ -11,11 +11,11 @@ const stagger = (clip, { count, delay }) =>
     const listenOnClip = index => {
       if (index >= count) return;
       const interceptor = new NextInterceptor(never());
-      clip.listen(noop, data => next([data, index]), fail, noop, interceptor);
+      clip(index, count).listen(noop, data => next([data, index]), fail, noop, interceptor);
       interceptor.next([
         EMITTER_MODE,
         (dur, control) => {
-          const start = index * delay;
+          const start = delay(index, count);
           const end = start + dur;
           duration = end;
           clipControls.push({
