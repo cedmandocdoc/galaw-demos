@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./demos/demo-2.css">
   <link rel="stylesheet" href="./demos/demo-3.css">
   <link rel="stylesheet" href="./demos/demo-4.css">
+  <link rel="stylesheet" href="./demos/demo-5.css">
 </head>
 
 <body>
@@ -71,16 +72,6 @@
     </article>
 
     <article id="demo-3" class="demo">
-      <h3>Simple Tween</h3>
-      <span>Hover inside the container to play.</span>
-      <section class="page">
-        <section class="playground">
-          <div class="big-square blue"></div>
-        </section>
-      </section>
-    </article>
-
-    <article id="demo-4" class="demo">
       <h3>Simple Stagger</h3>
       <span>Hover inside the container to play. Adjust the rotation.</span>
       <section class="page">
@@ -89,10 +80,29 @@
         <form class="control spring-setting">
           <span>Rotation configuration:</span>
           <div class="field">
-            <label for="demo-1-mass">Rotate: <span>45</span></label>
-            <input type="range" min="45" max="360" name="rotate" value="45" id="demo-4-rotate">
+            <label for="demo-3-rotate">Rotate: <span>45</span></label>
+            <input type="range" min="45" max="360" name="rotate" value="45" id="demo-3-rotate">
           </div>
         </form>
+      </section>
+    </article>
+
+    <article id="demo-4" class="demo">
+      <h3>Sequence Stagger</h3>
+      <span>Hover inside the container to play.</span>
+      <section class="page">
+        <section class="playground">
+        </section>
+      </section>
+    </article>
+
+    <article id="demo-5" class="demo">
+      <h3>Simple Tween</h3>
+      <span>Hover inside the container to play.</span>
+      <section class="page">
+        <section class="playground">
+          <div class="big-square blue"></div>
+        </section>
       </section>
     </article>
   </main>
@@ -108,6 +118,7 @@
   <script src="./demos/demo-2.js"></script>
   <script src="./demos/demo-3.js"></script>
   <script src="./demos/demo-4.js"></script>
+  <script src="./demos/demo-5.js"></script>
 </body>
 
 </html>
